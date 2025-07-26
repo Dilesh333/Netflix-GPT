@@ -89,7 +89,7 @@ const Login = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-auto">
+    <div className="relative min-h-screen w-full overflow-x-hidden">
       {/* Header */}
       <Header />
 
@@ -102,12 +102,12 @@ const Login = () => {
 
       <div className="fixed inset-0 bg-black opacity-60 -z-10"></div>
 
-      <div className="flex justify-center items-center min-h-screen p-4">
+      <div className="flex flex-col justify-center items-center min-h-screen px-4 sm:px-6">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="w-full max-w-md p-10 bg-black bg-opacity-70 text-white rounded-md shadow-lg"
         >
-          <h1 className="font-bold text-3xl py-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-6">
             {isSignInForm ? "Sign In" : "Sign Up"}
           </h1>
 
@@ -116,7 +116,7 @@ const Login = () => {
               ref={name}
               type="text"
               placeholder="Full Name"
-              className="bg-transparent border border-gray-500 p-4 my-2 w-full rounded-md placeholder-gray-400 focus:outline-none"
+              className="bg-transparent border border-gray-500 p-3 my-2 w-full rounded-md placeholder-gray-400 focus:outline-none"
             />
           )}
 
@@ -134,16 +134,16 @@ const Login = () => {
             className="bg-transparent border border-gray-500 p-4 my-2 w-full rounded-md placeholder-gray-400 focus:outline-none"
           />
 
-          <p className="text-red-700 font-semibold">{errorMessage}</p>
+          <p className="text-red-500 text-sm font-semibold mt-1">{errorMessage}</p>
 
           <button
             onClick={handleButtonClick}
-            className="p-4 my-4 bg-red-700 hover:bg-red-800 w-full font-semibold rounded-md transition"
+            className="p-3 my-4 bg-red-700 hover:bg-red-800 w-full rounded-md font-semibold transition"
           >
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>
 
-          <div className="flex justify-between text-sm text-gray-400 mt-2">
+          <div className="flex justify-between text-xs sm:text-sm text-gray-400 mt-2">
             <label>
               <input type="checkbox" className="mr-1" /> Remember me
             </label>
@@ -152,7 +152,7 @@ const Login = () => {
             </a>
           </div>
 
-          <div className="mt-6 text-gray-400 text-sm">
+          <div className="mt-6 text-sm text-gray-400">
             {isSignInForm ? "New to Netflix?" : "Already registered?"}{" "}
             <span
               onClick={toggleSignInForm}

@@ -5,8 +5,8 @@ const MovieList = ({ title, movies }) => {
   
 
   return (
-    <div className="relative pl-6">
-      <h1 className="text-xl font-bold mb-2 text-white">{title}</h1>
+    <div className="relative  sm:pl-6 mt-0">
+      <h1 className="sm:text-xl font-bold mb-2 text-white">{title}</h1>
       <div className="flex overflow-x-scroll no-scrollbar ">
         <div className="flex gap-3">
           {movies?.map((movie) => (
